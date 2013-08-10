@@ -2,7 +2,8 @@
 // @name          Pixiv target blank               
 // @namespace     http://shioneko.sakura.ne.jp/   
 // @description   a tag blank
-// @include       http://www.pixiv.net/*                        
+// @include       http://www.pixiv.net/*
+// @exclude       http://www.pixiv.net/member_illust.php?mode*                        
 // ==/UserScript==
 
 
