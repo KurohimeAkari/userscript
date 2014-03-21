@@ -2,14 +2,16 @@
 // @name 「Pixiv」のイラストで自動的にチェッカーつける。
 // @description タグやR-18補完は確実にできるものの、何がチェックされてるかわかりにくい状態です。
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.00
+// @version 1.10
 // @include http://www.pixiv.net/bookmark_add.php?type=illust&illust_id=*
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
 // @require http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js
 // ==/UserScript==
 
 $(window).load(function () {
-
+	// 編集時に2重にタグが被さらないようにする。	
+	$("#input_tag").val('');
+	
 	// R-18 を発見した。
 	$(".recommend-tag").find("span").each(function(){
 		var R = $(this).text();
