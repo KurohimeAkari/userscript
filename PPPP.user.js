@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name 「ぽぷぽぽぽっぷん」でクリア分かりやすくする。
-// @description 主にカラーリングや、クリアメダル別検索を実装した。
+// @description ちょっとだけ変更した。
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.10
+// @version 1.20
 // @include http://popupopupopnp.com/alldata/?level*
+// @include http://popupopupopnp.com/clear_log/*
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
 // @require http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js
 // ==/UserScript==
@@ -89,19 +90,20 @@ $(document).ready(function () {
 	});
 	
 	// チェックボックスフォーラムを作る。
-	$('form').eq(1).after('<div style="width:100%; margin:5px;" id="Mf"></div>');
-	$('#Mf').append('<img src="/img/mark/1.gif">No Clear : <input type="checkbox" checked="checked" id="C1" />　');
-	$('#Mf').append('<img src="/img/mark/2.gif">No Clear : <input type="checkbox" checked="checked" id="C2" />　');
-	$('#Mf').append('<img src="/img/mark/3.gif">No Clear : <input type="checkbox" checked="checked" id="C3" />　');
-	$('#Mf').append('<img src="/img/mark/4.gif">Clear : <input type="checkbox" checked="checked" id="C4" />　');
-	$('#Mf').append('<img src="/img/mark/5.gif">Clear : <input type="checkbox" checked="checked" id="C5" />　');
-	$('#Mf').append('<img src="/img/mark/6.gif">Clear : <input type="checkbox" checked="checked" id="C6" /> <br>');
-	$('#Mf').append('<img src="/img/mark/7.gif">Clear : <input type="checkbox" checked="checked" id="C7" />　');
-	$('#Mf').append('<img src="/img/mark/8.gif">Clear : <input type="checkbox" checked="checked" id="C8" />　');
-	$('#Mf').append('<img src="/img/mark/9.gif">Clear : <input type="checkbox" checked="checked" id="C9" />　');
-	$('#Mf').append('<img src="/img/mark/10.gif">Parfect : <input type="checkbox" checked="checked" id="C10" />　');
-	$('#Mf').append('No Play : <input type="checkbox" checked="checked" id="C0" />　<br>');
+	$('form').eq(1).after('<div style="width:100%; margin:5px;  margin-left:-13px;" id="Mf"></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/1.gif">No Clear : <input type="checkbox" checked="checked" id="C1" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/2.gif">No Clear : <input type="checkbox" checked="checked" id="C2" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/3.gif">No Clear : <input type="checkbox" checked="checked" id="C3" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/4.gif">Clear : <input type="checkbox" checked="checked" id="C4" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/5.gif">Clear : <input type="checkbox" checked="checked" id="C5" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/6.gif">Clear : <input type="checkbox" checked="checked" id="C6" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/7.gif">Clear : <input type="checkbox" checked="checked" id="C7" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/8.gif">Clear : <input type="checkbox" checked="checked" id="C8" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/9.gif">Clear : <input type="checkbox" checked="checked" id="C9" /></div>');
+	$('#Mf').append('<div class="Ccss"><img src="/img/mark/10.gif">Parfect : <input type="checkbox" checked="checked" id="C10" /></div>');
+	$('#Mf').append('<div class="Ccss">No Play : <input type="checkbox" checked="checked" id="C0" /></div>');
 
+	$('.Ccss').css({'width':'110px','display':'inline-block','text-align':'right'});
 	//$('#Mf').append('No Clear : <input type="checkbox" checked="checked" id="NoClear" />　');
 	
 
