@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name 「ぽぷぽぽぽっぷん」でクリア分かりやすくする。
-// @description ちょっとだけ変更した。
+// @description 右側にクリアランプ順に表示するボタンを追加した。
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.20
+// @version 1.30
 // @include http://popupopupopnp.com/alldata/?level*
 // @include http://popupopupopnp.com/clear_log/*
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
@@ -14,6 +14,169 @@
 
 $(document).ready(function () {
 
+	// 右の欄について
+	$("body").append("<p id='noplay'>プレーなし</p>");
+	$("#noplay").css({
+		"position":"fixed",
+		"bottom":"10px",
+		"right":"10px",
+		"width":"100px",
+		"background-color":"#eeeeee"
+	});
+
+	$("#noplay").click(function(){
+		for (var i = 0 ; i < 11 ; i++){
+
+			$(".C_"+ i).each(function(){
+            	$(".C_"+ i).css("display","none");
+        	});
+			$("#C" + i).attr("checked", false);
+
+        	if (i == 0){
+        		$(".C_0").css("display","");
+            	$("#C0").attr("checked", true);
+        	}
+        }
+	});
+
+	// 右の欄について
+	$("body").append("<p id='notC'>未クリア</p>");
+	$("#notC").css({
+		"position":"fixed",
+		"bottom":"40px",
+		"right":"10px",
+		"width":"100px",
+		"background-color":"#b2b2b2"
+	});
+
+	$("#notC").click(function(){
+		for (var i = 0 ; i < 11 ; i++){
+
+			$(".C_"+ i).each(function(){
+            	$(".C_"+ i).css("display","none");
+        	});
+			$("#C" + i).attr("checked", false);
+
+        	if (i == 1){
+        		$(".C_1").css("display","");
+            	$("#C1").attr("checked", true);
+        	}else if (i == 2){
+        		$(".C_2").css("display","");
+            	$("#C2").attr("checked", true);
+        	}else if (i == 3){
+        		$(".C_3").css("display","");
+            	$("#C3").attr("checked", true);
+        	}
+        }
+	});
+
+	// クリアのみ
+	$("body").append("<p id='play'>通常クリアのみ</p>");
+	$("#play").css({
+		"position":"fixed",
+		"bottom":"70px",
+		"right":"10px",
+		"width":"100px",
+		"background-color":"#ffe8e0"
+	});
+
+	$("#play").click(function(){
+		for (var i = 0 ; i < 11 ; i++){
+
+			$(".C_"+ i).each(function(){
+            	$(".C_"+ i).css("display","none");
+        	});
+        	$("#C" + i).attr("checked", false);
+
+        	if (i == 4){
+        		$(".C_4").css("display","");
+            	$("#C4").attr("checked", true);
+        	} else if (i == 5){
+        		$(".C_5").css("display","");
+            	$("#C5").attr("checked", true);
+        	} else if (i == 6){
+        		$(".C_6").css("display","");
+            	$("#C6").attr("checked", true);
+        	}
+        }
+	});
+
+	// フルコンのみ
+	$("body").append("<p id='FullC'>フルコンのみ</p>");
+	$("#FullC").css({
+		"position":"fixed",
+		"bottom":"100px",
+		"right":"10px",
+		"width":"100px",
+		"background-color":"#e0f7ff"
+	});
+
+	$("#FullC").click(function(){
+		for (var i = 0 ; i < 11 ; i++){
+
+			$(".C_"+ i).each(function(){
+            	$(".C_"+ i).css("display","none");
+        	});
+			$("#C" + i).attr("checked", false);
+
+        	if (i == 7){
+        		$(".C_7").toggle();
+            	$("#C7").css("display","");
+        	} else if (i == 8){
+        		$(".C_8").toggle();
+            	$("#C8").css("display","");
+        	} else if (i == 9){
+        		$(".C_9").toggle();
+            	$("#C9").css("display","");
+        	}
+        }
+	});
+
+	// パーフェクトのみ
+	$("body").append("<p id='Parfect'>パーフェクト</p>");
+	$("#Parfect").css({
+		"position":"fixed",
+		"bottom":"130px",
+		"right":"10px",
+		"width":"100px",
+		"background-color":"#ffecad"
+	});
+
+	$("#Parfect").click(function(){
+		for (var i = 0 ; i < 11 ; i++){
+
+			$(".C_"+ i).each(function(){
+            	$(".C_"+ i).css("display","none");
+        	});
+			$("#C" + i).attr("checked", false);
+
+        	if (i == 10){
+        		$(".C_10").css("display","");
+            	$("#C10").attr("checked", true);
+        	} 
+        }
+	});
+
+// リセット
+	$("body").append("<p id='Reset'>リセット</p>");
+	$("#Reset").css({
+		"position":"fixed",
+		"bottom":"160px",
+		"right":"10px",
+		"width":"100px",
+		"background-color":"#4c6"
+	});
+
+	$("#Reset").click(function(){
+		for (var i = 0 ; i < 11 ; i++){
+
+			$(".C_"+ i).each(function(){
+            	$(".C_"+ i).css("display","");
+        	});
+			$("#C" + i).attr("checked", true);
+        }
+	});
+
 	// No play (タグのみ)
 	$("tr td:empty").each(function(){
 		$(this).parent().attr('class','C_0')
@@ -22,7 +185,7 @@ $(document).ready(function () {
 	// 未クリアの場合 （灰色）
 	$("img[src*='1.gif']").each(function(){
 		// メダルの要素の背景に色を付けてわかりやすくする。
-		$(this).parent().parent().attr('class','C_1')
+		$(this).parent().parent().attr('class','C_1 ')
 		$(this).parent().parent().css({'background':'#b2b2b2'});
 	});
 
@@ -164,5 +327,4 @@ $(document).ready(function () {
             $(this).toggle();
         });
     });
-
 });
