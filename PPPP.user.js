@@ -2,7 +2,7 @@
 // @name 「ぽぷぽぽぽっぷん」でクリア分かりやすくする。
 // @description 右側にクリアランプ順に表示するボタンを追加した。
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.30
+// @version 1.40
 // @include http://popupopupopnp.com/alldata/?level*
 // @include http://popupopupopnp.com/clear_log/*
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
@@ -120,14 +120,14 @@ $(document).ready(function () {
 			$("#C" + i).attr("checked", false);
 
         	if (i == 7){
-        		$(".C_7").toggle();
-            	$("#C7").css("display","");
+            	$(".C_7").css("display","");
+            	$("#C7").attr("checked", true);
         	} else if (i == 8){
-        		$(".C_8").toggle();
-            	$("#C8").css("display","");
+            	$(".C_8").css("display","");
+            	$("#C8").attr("checked", true);
         	} else if (i == 9){
-        		$(".C_9").toggle();
-            	$("#C9").css("display","");
+            	$(".C_9").css("display","");
+            	$("#C9").attr("checked", true);
         	}
         }
 	});
