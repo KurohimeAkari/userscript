@@ -2,8 +2,10 @@
 // @name 邪魔な広告を導入するだけで削除させる。
 // @description 見難いってありゃしない(´・ω・｀)	
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.00
+// @version 1.50
 // @include *
+// @updateURL https://raw.githubusercontent.com/KurohimeAkari/userscript/master/addPaper.user.js
+// @installURL https://raw.githubusercontent.com/KurohimeAkari/userscript/master/addPaper.user.js
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
 // ==/UserScript==
 

@@ -2,9 +2,11 @@
 // @name 「ぽぷぽぽぽっぷん」でクリア分かりやすくする。
 // @description 右側にクリアランプ順に表示するボタンを追加した。
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.40
+// @version 1.50
 // @include http://popupopupopnp.com/alldata/?level*
 // @include http://popupopupopnp.com/clear_log/*
+// @updateURL https://raw.githubusercontent.com/KurohimeAkari/userscript/master/PPPP.user.js
+// @installURL https://raw.githubusercontent.com/KurohimeAkari/userscript/master/PPPP.user.js
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
 // @require http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js
 // ==/UserScript==
