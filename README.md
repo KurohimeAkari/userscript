@@ -1,0 +1,4 @@
+userscript
+==========
+
+UserScript (Greasemonky)のスクリプトです。
