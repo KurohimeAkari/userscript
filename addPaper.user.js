@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name 邪魔な広告を導入するだけで削除させる。
+// @name adpaper_delite
 // @description 見難いってありゃしない(´・ω・｀)	
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.50
+// @version 1.60
 // @include *
 // @updateURL https://raw.githubusercontent.com/KurohimeAkari/userscript/master/addPaper.user.js
 // @installURL https://raw.githubusercontent.com/KurohimeAkari/userscript/master/addPaper.user.js
