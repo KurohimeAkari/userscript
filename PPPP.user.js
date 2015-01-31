@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name 「ぽぷぽぽぽっぷん」でクリア分かりやすくする。
+// @name 「ぽぷぽぷぽっぷん」でクリア分かりやすくする。
 // @description 右側にクリアランプ順に表示するボタンを追加した。
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.50
+// @version 1.60
 // @include http://popupopupopnp.com/alldata/?level*
 // @include http://popupopupopnp.com/clear_log/*
 // @updateURL https://raw.githubusercontent.com/KurohimeAkari/userscript/master/PPPP.user.js
