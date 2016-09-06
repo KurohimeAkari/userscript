@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name 「Pixiv」のイラストで自動的にチェッカーつける。
-// @description ちょっとしたPixivの仕様変更を修正した。
+// @description ほぼ公式と同じ仕様にした。
 // @namespace http://shioneko.sakura.ne.jp/
-// @version 1.30
+// @version 1.20
 // @include http://www.pixiv.net/bookmark_add.php?type=illust&illust_id=*
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
 // @require http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js
@@ -41,19 +41,19 @@ $(window).load(function () {
 				var Ms = $('#input_tag').val();
 				Ms = Ms + " " + M;
 				$('#input_tag').val(Ms);
-				
+
 				// あなたのブックマークタグに色を付ける。
 				$(this).attr('class','tag c6 on selected');
-				
 				// この作品タグにタグ付け (最初の奴と同じならばタグつけて良し)
 				$(".recommend-tag").find("span").each(function(){
 					var New = $(this).text();
 					var News = New.replace(/\*/g,"");
 					if (News == Rs){
 						$(this).attr('class','tag c6 on selected');
-					}
+                        $(this).children('.tag').remove();
+					} 
 				});
-			}
+            }
 		});
 	});
 });
